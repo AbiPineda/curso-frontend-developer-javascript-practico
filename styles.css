@@ -118,6 +118,7 @@ nav {
 .inactive {
     display: none;
 }
+
 /* MOBILE */
 .mobile-menu {
     position: absolute;
@@ -161,4 +162,13 @@ nav {
   .navbar-email {
     display: none;
   }
+  .desktop-menu{
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+    .mobile-menu{
+        display: none;
+    }
 }
