@@ -1,17 +1,53 @@
-/* Menu Email */
+/* Desktop */
 const menuEmail = document.querySelector('.navbar-email');
-const desktopMenu = document.querySelector('.desktop-menu');
-menuEmail.addEventListener('click',aparecerMenu);
+/* Mobile */
+const menuHamIcon = document.querySelector('.menu');
+/* Carrito */
+const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
 
-function aparecerMenu(){
-    desktopMenu.classList.toggle('inactive');
+/* ------------------------------------------------------------------- */
+/* Desktop */
+const desktopMenu = document.querySelector('.desktop-menu');
+/* Mobile */
+const mobileMenu = document.querySelector('.mobile-menu');
+/* Carrito */
+const aside = document.querySelector('.product-detail');
+
+
+/* ------------------------------------------------------------------- */
+/* Desktop */
+menuEmail.addEventListener('click', toggleDesktopMenu);
+/* Mobile */
+menuHamIcon.addEventListener('click', toggleMobileMenu);
+/* Carrito */
+menuCarritoIcon.addEventListener('click', toggleCarritoAside);
+
+function toggleDesktopMenu() {
+  const isAsideClosed = aside.classList.contains('inactive');
+
+  if (!isAsideClosed) {
+    aside.classList.add('inactive');
+  }
+  
+  desktopMenu.classList.toggle('inactive');
 }
 
-/* Menu hamburguesa (movil) */
-const burgerMenu = document.querySelector('.menu');
-const mobileMenu = document.querySelector('.mobile-menu');
-burgerMenu.addEventListener('click',aparecerMenuHamburguesa);
+function toggleMobileMenu() {
+  const isAsideClosed = aside.classList.contains('inactive');
 
-function aparecerMenuHamburguesa(){
-    mobileMenu.classList.toggle('inactive');
+  if (!isAsideClosed) {
+    aside.classList.add('inactive'); 
+  }
+  
+  mobileMenu.classList.toggle('inactive');
+}
+
+function toggleCarritoAside() {
+  const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
+  
+  if (!isMobileMenuClosed) {
+    mobileMenu.classList.add('inactive'); 
+  }
+  
+  aside.classList.toggle('inactive');
 }
